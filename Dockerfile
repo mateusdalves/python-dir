@@ -10,5 +10,6 @@ RUN pip install -r requirements.txt
 
 COPY ./src/ /app/
 ENV FLASK_APP=server.py
+ENV ROOT_DIR=/app/list
 
 CMD flask run -h 0.0.0.0 -p 5000
