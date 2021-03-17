@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, jsonify
 import os
 import conf
 import main
@@ -18,6 +18,16 @@ def index():
 def list_dir():
     files = main.scan_dir(root_dir)
     return render_template('dir.html', files=files)
+
+
+@app.route('/list_dir')
+def return_dir():
+    _ = []
+    files = main.scan_dir(root_dir)
+    for file in files:
+        _.append(file.get_file())
+        
+    return jsonify({"files": _})
 
 
 

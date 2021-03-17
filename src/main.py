@@ -6,7 +6,10 @@ class File():
     def __init__(self, name, size):
         self.name = name
         self.size = size
-    
+
+
+    def get_file(self):
+        return {"name": self.name, "size": self.size}
 
 def factor(x):
 

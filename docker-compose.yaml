@@ -4,6 +4,6 @@ services:
     build: 
       context: .
     container_name: python-dir
-    image: zeromomentum/python-dir:1.0.0
+    image: zeromomentum/python-dir:latest
     ports:
       - 5000:5000

@@ -3,6 +3,8 @@ FROM python:3.8.8-alpine3.13
 RUN mkdir -p /app
 WORKDIR /app
 
+ADD VERSION .
+
 COPY ./src/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
